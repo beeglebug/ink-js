@@ -1,2 +1,2 @@
 # ink-js
-Javascript version on Inkle studios Ink runtime
+Javascript version of Inkle Studios Ink runtime

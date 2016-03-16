@@ -39,6 +39,19 @@ describe('content', function() {
   });
 
 
+  it('2-comments', function() {
+
+    var ink = readInk('2-comments');
+    var story = parse(ink);
+
+    expect(story.canContinue).to.equal(true);
+
+    expect(story.continue()).to.equal('"What do you make of this?" she asked.');
+    expect(story.continue()).to.equal('"I couldn\'t possibly comment," I replied.');
+
+    expect(story.canContinue).to.equal(false);
+  });
+
 });
 
 

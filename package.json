@@ -1,0 +1,26 @@
+{
+  "name": "ink-js",
+  "version": "0.0.1",
+  "keywords": [],
+  "author": "Stuart Lee",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beeglebug/ink-js.git"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "browserify index.js -o bin/ink-js.js"
+  },
+  "devDependencies": {
+    "browserify": "~9.0.8",
+    "chai": "^2.3.0",
+    "mocha": "^2.2.4"
+  },
+  "bugs": {
+    "url": "https://github.com/beeglebug/ink-js/issues"
+  },
+  "homepage": "https://github.com/beeglebug/ink-js#readme",
+  "description": ""
+}

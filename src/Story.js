@@ -9,7 +9,7 @@ var Story = function() {
 Object.defineProperty(Story.prototype, 'canContinue', {
 
   get: function () {
-    return true;
+    return this.stack.length > 0;
   }
 });
 

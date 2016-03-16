@@ -16,6 +16,8 @@ describe('content', function() {
     var text = story.continue();
 
     expect(text).to.equal('Hello world!');
+
+    expect(story.canContinue).to.equal(false);
   });
 
   it('1-multiline', function() {
@@ -32,6 +34,8 @@ describe('content', function() {
     expect(text1).to.equal('Hello, world!');
     expect(text2).to.equal('Hello?');
     expect(text3).to.equal('Hello, are you there?');
+
+    expect(story.canContinue).to.equal(false);
   });
 
 

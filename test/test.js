@@ -2,15 +2,14 @@ var describe = require('mocha').describe;
 var it = require('mocha').it;
 var expect = require('chai').expect;
 var fs = require('fs');
-var Parser = require('../Parser.js');
-var parser = new Parser();
+var parse = require('../src/parse.js');
 
 describe('content', function() {
 
   it('0-hello-world', function() {
 
     var ink = readInk('0-hello-world');
-    var story = parser.parse(ink);
+    var story = parse(ink);
 
     expect(story.canContinue).to.equal(true);
 
@@ -22,7 +21,7 @@ describe('content', function() {
   it('1-multiline', function() {
 
     var ink = readInk('1-multiline');
-    var story = parser.parse(ink);
+    var story = parse(ink);
 
     expect(story.canContinue).to.equal(true);
 

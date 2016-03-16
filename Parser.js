@@ -9,11 +9,11 @@ Parser.prototype.parse = function(text) {
 
   var story = new Story();
 
-  var node = new Node();
-
-  node.content = lines[0];
-
-  story.stack.push(node);
+  lines.forEach(function(line) {
+    var node = new Node();
+    node.content = line;
+    story.stack.unshift(node);
+  });
 
   return story;
 };

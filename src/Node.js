@@ -1,6 +1,6 @@
 var Node = function() {
   this.content = null;
-  this.choice = [];
+  this.choices = [];
 };
 
 module.exports = Node;

@@ -1,5 +1,6 @@
 var Story = require('./Story.js');
 var Node = require('./Node.js');
+var Choice = require('./Choice.js');
 
 function parse(text) {
 
@@ -8,6 +9,8 @@ function parse(text) {
   var story = new Story();
 
   var _inComment = false;
+  var _currentNode = null;
+  var _currentChoice = null;
 
   lines.forEach(function(line) {
 
@@ -38,11 +41,17 @@ function parse(text) {
       return;
     }
 
-    var node = new Node();
-
-    node.content = line;
-
-    story.stack.unshift(node);
+    if(line.startsWith('*')) {
+      // add a choice to the last node
+      _currentChoice = new Choice();
+      _currentChoice.choiceText = removeChoiceMarker(line);
+      _currentNode.choices.push(_currentChoice);
+    } else {
+      // start a new node
+      _currentNode = new Node();
+      _currentNode.content = line;
+      story.stack.unshift(_currentNode);
+    }
   });
 
   return story;
@@ -62,6 +71,10 @@ function isMultiLineCommentEnd(line) {
 
 function isTodo(line) {
   return line.startsWith('TODO');
+}
+
+function removeChoiceMarker(line) {
+  return line.replace(/^[\*\s]+/, '');
 }
 
 module.exports = parse;

@@ -7,7 +7,7 @@ module.exports = function() {
 
   it('hello world', function() {
 
-    var ink = fs.readFileSync('./test/ink/0-hello-world.ink', 'utf-8');
+    var ink = fs.readFileSync('./test/ink/content/hello-world.ink', 'utf-8');
     var story = parse(ink);
 
     expect(story.canContinue).to.equal(true);
@@ -17,7 +17,7 @@ module.exports = function() {
 
   it('multi line', function() {
 
-    var ink = fs.readFileSync('./test/ink/1-multiline.ink', 'utf-8');
+    var ink = fs.readFileSync('./test/ink/content/multiline.ink', 'utf-8');
     var story = parse(ink);
 
     expect(story.canContinue).to.equal(true);
@@ -30,7 +30,7 @@ module.exports = function() {
 
   it('comments', function() {
 
-    var ink = fs.readFileSync('./test/ink/2-comments.ink', 'utf-8');
+    var ink = fs.readFileSync('./test/ink/content/comments.ink', 'utf-8');
     var story = parse(ink);
 
     expect(story.canContinue).to.equal(true);
